@@ -1,0 +1,65 @@
+// 1. Start
+// 2. Initialize three counters: wordCount = 0, vowelCount = 0, charCount = 0
+// 3. Read a character from the user
+// 4. While the character is not a point:
+//      a. Increment charCount by 1
+//      b. If the character is a space:
+//           i. Increment wordCount by 1
+//      c. If the character is a vowel (a, e, i, o, u - consider both uppercase and lowercase):
+//           i. Increment vowelCount by 1
+//      d. Read the next character
+// 5. Display wordCount, vowelCount, and charCount
+// 6. End
+
+
+
+
+
+
+// 1. Start
+// 2. Define a function sumOfDistinctElements(set1, set2):
+// 3.     Initialize an empty array distinctElements[]
+// 4.     Initialize sum = 0
+// 5.     For each element in set1:
+// 6.         If the element is not in distinctElements:
+// 7.             Add the element to distinctElements
+// 8.             Add the element to sum
+// 9.     For each element in set2:
+// 10.        If the element is not in distinctElements:
+// 11.            Add the element to distinctElements
+// 12.            Add the element to sum
+// 13.    Return sum
+// 14. Read set1 from the user
+// 15. Read set2 from the user
+// 16. result = sumOfDistinctElements(set1, set2)
+// 17. Display result
+// 18. End
+
+def analyze_sentence(sentence):
+    # Initialize counters
+    word_count = 0
+    vowel_count = 0
+    sentence_length = len(sentence)
+
+    # Define vowels
+    vowels = "aeiouAEIOU"
+
+    # Iterate through each character in the sentence
+    for char in sentence:
+        # Check for a space to identify word boundaries
+        if char == ' ':
+            word_count += 1
+        # Check if the character is a vowel
+        elif char in vowels:
+            vowel_count += 1
+
+    # The last character is a point, so it's the end of a word
+    word_count += 1
+
+    # Display results
+    print(f"Number of words: {word_count}")
+    print(f"Number of vowels: {vowel_count}")
+
+# Example usage
+sentence = input("Enter a sentence ending with a point: ")
+analyze_sentence(sentence)
